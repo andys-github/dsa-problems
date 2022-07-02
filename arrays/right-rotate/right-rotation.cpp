@@ -5,6 +5,7 @@ using namespace std;
 
 void solve1(vector<int> arr, int d);
 void solve2(vector<int> arr, int d);
+void solve3(vector<int> arr, int d); 
 void reverse(vector<int> &arr, int lo, int hi);
 
 int main() {
@@ -37,6 +38,12 @@ int main() {
     cout << "Solution 2: " << endl;
     solve2(inputArray, rotateBy);
 
+    cout << endl << endl;
+
+    // Solve 3
+    cout << "Solution 3: " << endl;
+    solve3(inputArray, rotateBy);
+
     return 0;
 }
 
@@ -49,6 +56,30 @@ int main() {
  * ------------------------------
  */
 void solve1(vector<int> arr, int d) {
+    int n = arr.size();
+    vector<int> result(n);
+
+    for(int i = 0; i < n; i++) {
+        int newLocation = i + d;
+
+        if(newLocation >= n) {
+            newLocation = newLocation - n;
+        }
+        result[newLocation] = arr[i];
+    }
+
+    for(int e: result) cout << e << " ";
+}
+
+/**
+ * ------------------------------
+ * n: Size of input array
+ * 
+ * Time Complexity: O(n)
+ * Space Complexity: O(n)
+ * ------------------------------
+ */
+void solve2(vector<int> arr, int d) {
     int n = arr.size();
     vector<int> result(n);
 
@@ -67,7 +98,7 @@ void solve1(vector<int> arr, int d) {
  * Space Complexity: O(1)
  * ------------------------------
  */
-void solve2(vector<int> arr, int d) {
+void solve3(vector<int> arr, int d) {
     int n = arr.size();
 
     reverse(arr, 0, n - d - 1);
