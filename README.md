@@ -6,3 +6,9 @@ This repo contains all the DSA problems that I solve on platforms like HackerRan
 - Right rotation
 - Find the single occurrence
 - 
+
+
+## Binary Search
+- Search-Insert Postition
+- Valid Perfect Squares
+- Peak Index in a Mountain Array
