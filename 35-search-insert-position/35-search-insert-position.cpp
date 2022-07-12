@@ -1,3 +1,6 @@
+#include <vector>
+using std::vector;
+
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
